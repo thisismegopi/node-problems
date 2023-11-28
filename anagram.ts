@@ -4,15 +4,15 @@ For example, “abcd” and “dabc” are an anagram of each other.
  */
 
 const checkAnagram = (str1: string, str2: string) => {
-    const sortedArr1 = str1.split('').sort();
-    const sortedArr2 = str2.split('').sort();
+    const sortedArr1 = str1.split('').sort().join('');
+    const sortedArr2 = str2.split('').sort().join('');
 
     let isAnagram = false;
 
-    if (sortedArr1.length === sortedArr2.length && sortedArr1.join() === sortedArr2.join()) {
+    if (sortedArr1 === sortedArr2) {
         isAnagram = true;
     }
 
     return isAnagram;
 };
-console.log(checkAnagram('abcd', 'bbac'));
+console.log(checkAnagram('abcd', 'bcda'));
