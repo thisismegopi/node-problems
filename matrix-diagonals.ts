@@ -14,9 +14,9 @@ Their absolute difference is: 15 - 17 = 2
 
 */
 const input: number[][] = [
-    [1, 2, 3],
+    [10, 2, 3],
     [4, 5, 6],
-    [9, 8, 9],
+    [19, 8, 9],
 ];
 
 const findAbsDiff = (input: number[][], direction: 'ltr' | 'rtl') => {
@@ -35,15 +35,15 @@ const findAbsDiff = (input: number[][], direction: 'ltr' | 'rtl') => {
         let currItration = 2;
         for (let i = 0; i < input.length; i++) {
             total = total + input[i][currItration];
-            currItration = currItration - 1;
+            currItration--;
         }
         diff2 = total;
     }
     return diff1 + diff2;
 };
-console.log('The left-to-right diagonal ' + findAbsDiff(input, 'ltr'));
-console.log('The right-to-left diagonal ' + findAbsDiff(input, 'rtl'));
 
 const abs = Math.abs(findAbsDiff(input, 'ltr') - findAbsDiff(input, 'rtl'));
 
+console.log('The left-to-right diagonal ' + findAbsDiff(input, 'ltr'));
+console.log('The right-to-left diagonal ' + findAbsDiff(input, 'rtl'));
 console.log('Their absolute difference is ' + abs);
