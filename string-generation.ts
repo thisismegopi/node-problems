@@ -6,8 +6,8 @@ Output - ABXYXYXYMNOMNOPQRPQRPQRPQR
 
 const generateStr = (input: string) => {
     let result = '';
-    const splitedNums = input.split(')');
-    splitedNums.forEach(v => {
+    const splittedNums = input.split(')');
+    splittedNums.forEach(v => {
         const [numbers, seq] = v.split('(');
         if (numbers && seq) {
             result += seq.repeat(Number(numbers));
