@@ -32,7 +32,7 @@ const findAbsDiff = (input: number[][], direction: 'ltr' | 'rtl') => {
         diff1 = total;
     } else if (direction === 'rtl') {
         let total = 0;
-        let currItration = 2;
+        let currItration = input.length - 1;
         for (let i = 0; i < input.length; i++) {
             total = total + input[i][currItration];
             currItration--;
